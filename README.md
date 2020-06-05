@@ -5,16 +5,6 @@ of build. I'll try to update this project in my free time.
 
 Just enjoy :)
 
-Actively maintained, Kong is widely used in production at companies ranging
-from startups to Global 5000 as well as government organizations.
-
-[Installation](https://konghq.com/install) |
-[Documentation](https://docs.konghq.com) |
-[Forum](https://discuss.konghq.com) |
-[Blog](https://konghq.com/blog) |
-IRC (freenode): [#kong](https://webchat.freenode.net/?channels=kong) |
-[Nightly Builds][kong-nightly-master]
-
 ## Summary
 
 - [**What This Is About?**](#what-this-is-about)
