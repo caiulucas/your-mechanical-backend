@@ -22,3 +22,4 @@ There are the list of the most important modules I'm using in this project.
 
 - [Express](https://github.com/expressjs/express): One of the most famous web frameworks for node.
 - [TypeORM](https://github.com/typeorm/typeorm): Is an ORM with a good integration in Typescript.
+-[Jest](https://github.com/facebook/jest): An testing solution. Perfect for TDD(Test-Driven Develpment).
