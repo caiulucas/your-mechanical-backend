@@ -1,11 +1,14 @@
 import express from 'express';
+import { createConnection } from 'typeorm';
 
 const app = express();
 
-app.use(express.json());
+createConnection().then(() => {
+  app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.json({ msg: 'ok' });
+  app.get('/', (req, res) => {
+    res.json({ msg: 'ok' });
+  });
+
+  app.listen(process.env.PORT || 3333);
 });
-
-app.listen(process.env.PORT || 3333);
