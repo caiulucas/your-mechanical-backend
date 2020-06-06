@@ -1,11 +1,6 @@
-import express from 'express';
+import app from './app';
+import connection from './database/connection';
 
-const app = express();
-
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.json({ msg: 'ok' });
-});
+connection.create();
 
 app.listen(process.env.PORT || 3333);

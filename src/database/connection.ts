@@ -1,11 +1,15 @@
-import { createConnection } from 'typeorm';
+import { createConnection, getConnection } from 'typeorm';
 
 require('dotenv').config({
   path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env',
 });
 
-async function startConnection() {
-  await createConnection();
-}
+export default {
+  async create() {
+    await createConnection();
+  },
 
-startConnection();
+  async close() {
+    await getConnection().close();
+  },
+};

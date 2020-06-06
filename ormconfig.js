@@ -1,19 +1,20 @@
-const path = require('path');
-
 module.exports = {
+  name: 'default',
   type: process.env.DB_DIALECT,
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
+  dropSchema: process.env.DB_DROPSCHEMA,
   logging: false,
+  synchroize: true,
   migrationsRun: true,
 
-  entities: [path.resolve(__dirname, 'src', 'database', 'entities', '*.ts')],
-  migrations: [path.resolve(__dirname, 'src', 'database', 'migrations', '*.ts')],
+  entities: ['src/database/entities/*.ts'],
+  migrations: ['src/database/migrations/*.ts'],
   cli: {
-    entitiesDir: path.resolve(__dirname, 'src', 'database', 'entities'),
-    migrationsDir: path.resolve(__dirname, 'src', 'database', 'migrations'),
+    entitiesDir: 'src/database/entities',
+    migrationsDir: 'src/database/migrations',
   },
 };
