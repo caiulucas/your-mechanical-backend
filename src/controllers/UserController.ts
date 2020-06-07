@@ -1,23 +1,13 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
-import User from '../database/entities/User';
+import UserSchema, { User } from '../database/entities/UserSchema';
 
 export default {
   async create(req: Request, res: Response) {
-    const repository = getRepository(User);
+    const repository = getRepository(UserSchema);
 
-    const {
-      name, username, email, password,
-    } = req.body as User;
+    const savedUser = await repository.save(req.body as User);
 
-    const user = new User();
-    user.name = name;
-    user.username = username;
-    user.email = email;
-    user.password = password;
-
-    const savedUser = await repository.save(user);
-
-    return res.status(201).json(savedUser);
+    return res.status(404).json(savedUser);
   },
 };
