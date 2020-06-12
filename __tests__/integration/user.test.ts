@@ -11,6 +11,10 @@ describe('Users', () => {
     await connection.close();
   });
 
+  beforeEach(async () => {
+    await connection.clear();
+  });
+
   it('creates a user', async () => {
     const dataPayload = {
       name: 'Caio Lucas',
